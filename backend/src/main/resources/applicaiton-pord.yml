@@ -1,0 +1,12 @@
+# 운영 RDS 설정
+spring:
+  config:
+    activate:
+      on-profile: prod-db
+  datasource:
+    url: jdbc:mysql://team6-db.ctymkesiip9x.ap-northeast-2.rds.amazonaws.com:3306/team6?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: vmfhrmfoajtm1!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
