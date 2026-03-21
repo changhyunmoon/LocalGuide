@@ -26,8 +26,8 @@ services:
       start_period: 40s
 
   backend-green:
-    image: ${DOCKERHUB_USERNAME}/${BACKEND_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
-    container_name: backend-green
+    image: ${DOCKERHUB_USERNAME}/${BACKEND_IMAGE_NAME}:${BACKEND_IMAGE_TAG}
+
     environment:
       - SPRING_PROFILES_ACTIVE=prod
     ports:
