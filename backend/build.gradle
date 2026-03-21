@@ -21,16 +21,16 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-    # 1. MySQL 드라이버
+    // 1. MySQL 드라이버
     runtimeOnly 'com.mysql:mysql-connector-j'
 
-    # 2. Spring Data JPA
+    // 2. Spring Data JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-    # 3. Spring Boot Actuator
+    // 3. Spring Boot Actuator
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-    # 4. Lombok
+    // 4. Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 

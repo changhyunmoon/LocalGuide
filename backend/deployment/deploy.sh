@@ -2,29 +2,29 @@
 
 # 1. 환경 설정
 BASE_DIR="/home/ubuntu/backend-deploy"
-DOCKER_DIR="$BASE_DIR"
+DOCKER_DIR="$BASE_DIR/docker"
 COMPOSE_FILE="$DOCKER_DIR/docker-compose.yml"
-NGINX_CONF_DIR="$BASE_DIR"
+NGINX_CONF_DIR="$BASE_DIR/nginx"
 
 # 도커 컴포즈 명령어 정의
-DOCKER_COMPOSE="docker compose"
+DOCKER_COMPOSE="docker compose -f $COMPOSE_FILE"
 
 echo "--- 🚀 배포 프로세스 시작 ---"
 cd "$DOCKER_DIR"
 
 #  필수 환경 변수 주입 확인
-if [ -z "$DOCKER_IMAGE_TAG" ] || [ -z "$DOCKERHUB_USERNAME" ]; then
-    echo "❌ 에러: 필수 환경 변수(DOCKER_IMAGE_TAG 등)가 설정되지 않았습니다."
+if [ -z "$BACKEND_IMAGE_TAG" ] || [ -z "$DOCKERHUB_USERNAME" ]; then
+    echo "❌ 에러: 필수 환경 변수(BACKEND_IMAGE_TAG 등)가 설정되지 않았습니다."
     exit 1
 fi
 # docker-compose.yml.yml 파일 존재 확인
-if [ ! -f "docker-compose.yml" ]; then
-    echo "❌ 에러: docker-compose.yml 파일을 찾을 수 없습니다."
+if [ ! -f "$COMPOSE_FILE" ]; then
+    echo "❌ 에러: $COMPOSE_FILE 파일을 찾을 수 없습니다."
     exit 1
 fi
 
 # 3. Nginx 조각 파일(.inc) 존재 확인
-if [ ! -f "be_blue.inc" ] || [ ! -f "be_green.inc" ]; then
+if [ ! -f "$NGINX_CONF_DIR/be_blue.inc" ] || [ ! -f "$NGINX_CONF_DIR/be_green.inc" ]; then
     echo "❌ 경고: Nginx 설정 파일(.inc) 중 일부가 누락되었습니다."
     exit 1
 fi
