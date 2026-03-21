@@ -28,7 +28,7 @@ if [ ! -f "be_blue.inc" ] || [ ! -f "be_green.inc" ]; then
     echo "❌ 경고: Nginx 설정 파일(.inc) 중 일부가 누락되었습니다."
     exit 1
 fi
-echo "✅ 사전 환경 검사 통과 (변수 및 설정 파일 확인 완료)"
+echo "✅ 사전 환경 검사 통과 (변수 및 설정 파일 확인 완료)!"
 
 # 현재 실행 중인 컨테이너 확인 (Blue가 Up 상태인지)
 IS_BLUE=$($DOCKER_COMPOSE ps | grep "backend-blue" | grep "running" || true)
