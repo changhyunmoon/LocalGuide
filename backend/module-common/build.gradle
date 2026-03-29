@@ -1,0 +1,10 @@
+project(':module-common'){
+    dependencies {
+
+
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
