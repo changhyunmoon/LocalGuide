@@ -2,7 +2,7 @@
 
 # 1. 환경 설정 (경로 확인 필수)
 BASE_DIR="/home/ubuntu/backend-deploy"
-DOCKER_DIR="$BASE_DIR"  # 기존 구조에 맞춰 조정
+DOCKER_DIR="$BASE_DIR/docker"  # 기존 구조에 맞춰 조정
 COMPOSE_FILE="$DOCKER_DIR/docker-compose.yml"
 NGINX_CONF_DIR="$BASE_DIR/nginx"
 
