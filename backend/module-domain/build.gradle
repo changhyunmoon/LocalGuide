@@ -1,0 +1,10 @@
+project(':module-domain'){
+    dependencies {
+
+
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
