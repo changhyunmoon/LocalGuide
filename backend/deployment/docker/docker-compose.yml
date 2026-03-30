@@ -17,7 +17,7 @@ services:
     # 멀티모듈 api-server의 Actuator 경로를 확인하세요.
     # 보통 context-path가 없다면 /actuator/health 입니다.
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/actuator/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -36,7 +36,7 @@ services:
     networks:
       - team6-backend
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:8080/actuator/health || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:8080/api/actuator/health || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
