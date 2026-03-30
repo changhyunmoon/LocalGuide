@@ -9,12 +9,15 @@ project(':api-server'){
         implementation project(':module-chat')
         implementation project(':module-ai')
         implementation project(':module-common')
-        implementation project(':module-infrastructure')
 
-        // spring
+        // Spring Boot Starters
         implementation 'org.springframework.boot:spring-boot-starter-web'
 
+        // 모니터링 및 배포 헬스체크를 위한 Actuator (deploy.sh 연동 필수)
+        implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
+        // DB 드라이버
+        runtimeOnly 'com.mysql:mysql-connector-j'
     }
 
     repositories {
