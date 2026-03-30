@@ -2,7 +2,7 @@
 
 # 1. 환경 설정 (경로 확인 필수)
 BASE_DIR="/home/ubuntu/backend-deploy"
-DOCKER_DIR="$BASE_DIR"  # 기존 구조에 맞춰 조정
+DOCKER_DIR="$BASE_DIR/docker"  # 기존 구조에 맞춰 조정
 COMPOSE_FILE="$DOCKER_DIR/docker-compose.yml"
 NGINX_CONF_DIR="$BASE_DIR/nginx"
 
@@ -65,7 +65,7 @@ for i in {1..20}; do
     sleep 7 # 멀티모듈은 초기 구동 시간이 조금 더 걸릴 수 있어 간격을 넓혔습니다.
 
     # 헬스체크 경로 주의: /api/actuator/health 또는 /actuator/health
-    RESPONSE=$(curl -s http://127.0.0.1:$TARGET_PORT/actuator/health | grep "UP" || true)
+    RESPONSE=$(curl -s http://127.0.0.1:$TARGET_PORT/api/actuator/health | grep "UP" || true)
 
     if [ -n "$RESPONSE" ]; then
         echo "✅ 헬스체크 성공!"

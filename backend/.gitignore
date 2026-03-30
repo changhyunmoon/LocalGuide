@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# 모든 모듈의 로컬/운영 설정 파일 제외
+**/src/main/resources/application-local.yml
+**/src/main/resources/application-prod.yml
