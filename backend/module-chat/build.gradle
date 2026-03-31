@@ -1,6 +1,6 @@
 project(':module-chat'){
     dependencies {
-
+        implementation project(':module-common')
 
     }
 
