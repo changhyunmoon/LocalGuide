@@ -2,8 +2,8 @@ spring:
   profiles:
     active: local
 
----
-spring:
-  config:
-    activate:
-      on-profile: prod
+server:
+  port: 8080
+
+  servlet:
+    context-path: /api
