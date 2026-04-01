@@ -1,6 +1,21 @@
 project(':module-chat'){
     dependencies {
 
+        // 1. MySQL (JPA 활용)
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        runtimeOnly 'com.mysql:mysql-connector-j'
+
+        // 2. MongoDB (채팅 로그 및 비정형 데이터 저장용)
+        implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+        // 3. Redis (실시간 알림, 세션 관리, 캐싱용)
+        implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+        // 4. QueryDSL (복잡한 동적 쿼리 필요 시 - 선택 사항)
+        // implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+
+        // 공통 유틸리티가 필요하다면 추가
+        implementation project(':module-common')
 
     }
 

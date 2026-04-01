@@ -1,6 +1,15 @@
 project(':module-common'){
     dependencies {
+        // 1. JPA API (MappedSuperclass, Column 등)
+        implementation 'jakarta.persistence:jakarta.persistence-api'
 
+        // 2. Hibernate Core (CreationTimestamp, UpdateTimestamp 등)
+        // common 모듈이 가볍길 원한다면 'compileOnly'로,
+        // 모든 모듈에서 하이버네이트 기능을 쓰게 하려면 'implementation'으로 설정하세요.
+        implementation 'org.hibernate.orm:hibernate-core:6.4.1.Final'
+
+        // 3. Spring Data JPA (AuditingEntityListener 등)
+        implementation 'org.springframework.data:spring-data-jpa'
 
     }
 
